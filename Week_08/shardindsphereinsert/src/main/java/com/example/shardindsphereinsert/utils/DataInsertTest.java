@@ -58,11 +58,28 @@ public class DataInsertTest {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sharding_db", "root", "root");
             st = con.createStatement();
 
-            //从slave0读数据
             rs = st.executeQuery("select * from t_order");
             while (rs.next()) {
                 System.out.println(rs.getString(1) + "|" + rs.getString(2));
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            JDBCUtils.release(con,st,rs);
+        }
+    }
+
+    @Test
+    public void testRemove()  {
+        Connection con = null;
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3307/sharding_db", "root", "root");
+            st = con.createStatement();
+
+            st.executeUpdate("delete from t_order");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
