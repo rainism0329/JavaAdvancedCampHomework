@@ -1,0 +1,1 @@
+## 1. 搭建一个3节点Kafka集群，测试功能和性能；实现spring kafka下对kafka集群的操作，将代码提交到github。
