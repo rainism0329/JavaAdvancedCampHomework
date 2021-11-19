@@ -108,9 +108,9 @@
 
    A 系统处理完了直接返回成功了，人都以为你这个请求就成功了；但是问题是，要是 BCD 三个系统那里，BD 两个系统写库成功了，结果 C 系统写库失败了，咋整？你这数据就不一致了。
 
-```
+
 ![Alt text](https://github.com/rainism0329/JavaAdvancedCampHomework/blob/main/Week_15/image/brainMap.png)
-```
+
 
 
 
